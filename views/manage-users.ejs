@@ -3,9 +3,9 @@
 
 <table class="table">
   <thead>
-    <th>id</th>
-    <th>email</th>
-    <th>role</th>
+    <th>ID</th>
+    <th>Email</th>
+    <th>Role</th>
   </thead>
   <tbody>
     <% users.forEach(user => { %>
@@ -21,7 +21,7 @@
           <input type="hidden" name="id" value="<%= user.id %>" />
           <select name="role" id="role">
             <option value="ADMIN" <%= user.role === 'ADMIN' ? 'selected' : '' %> >Admin</option>
-            <option value="MODERATOR" <%= user.role === 'MODERATOR' ? 'selected' : '' %>>Moderator</option>
+            <option value="HR" <%= user.role === 'HR' ? 'selected' : '' %>>HR</option>
             <option value="EMPLOYEE" <%= user.role === 'EMPLOYEE' ? 'selected' : '' %>>Employee</option>
           </select>
           <input type="submit" value="update">
