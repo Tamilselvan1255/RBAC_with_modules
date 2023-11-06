@@ -96,14 +96,6 @@ mongoose
   })
   .catch((err) => console.log(err.message));
 
-// function ensureAuthenticated(req, res, next) {
-//   if (req.isAuthenticated()) {
-//     next();
-//   } else {
-//     res.redirect('/auth/login');
-//   }
-// }
-
 function ensureAdmin(req, res, next) {
   if (req.user.role === roles.admin) {
     next();
@@ -112,12 +104,3 @@ function ensureAdmin(req, res, next) {
     res.redirect('/');
   }
 }
-
-// function ensureModerator(req, res, next) {
-//   if (req.user.role === roles.moderator) {
-//     next();
-//   } else {
-//     req.flash('warning', 'you are not Authorized to see this route');
-//     res.redirect('/');
-//   }
-// }
