@@ -64,6 +64,12 @@ app.use(
   ensureAdmin,
   require('./routes/admin.route')
 );
+app.use(
+  '/admin',
+  ensureLoggedIn({ redirectTo: '/auth/login' }),
+  ensureAdmin,
+  require('./routes/admin.route')
+);
 
 // 404 Handler
 app.use((req, res, next) => {

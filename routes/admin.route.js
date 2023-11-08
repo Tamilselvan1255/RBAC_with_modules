@@ -13,6 +13,67 @@ router.get('/users', async (req, res, next) => {
   }
 });
 
+router.get('/user-details', async (req, res, next) => {
+  try {
+    const users = await User.find();
+    // res.send(users);
+    res.render('user-details', { users });
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.get('/promotion', async (req, res, next) => {
+  try {
+    const users = await User.find();
+    // res.send(users);
+    res.render('promotion', { users });
+  } catch (error) {
+    next(error);
+  }
+});
+
+
+router.get('/projects', async (req, res, next) => {
+  try {
+    const users = await User.find();
+    // res.send(users);
+    res.render('projects', { users });
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.get('/employees', async (req, res, next) => {
+  try {
+    const users = await User.find();
+    // res.send(users);
+    res.render('employees', { users });
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.get('/tickets', async (req, res, next) => {
+  try {
+    const users = await User.find();
+    // res.send(users);
+    res.render('tickets', { users });
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.get('/clients', async (req, res, next) => {
+  try {
+    const users = await User.find();
+    // res.send(users);
+    res.render('clients', { users });
+  } catch (error) {
+    next(error);
+  }
+});
+
 router.get('/user/:id', async (req, res, next) => {
   try {
     const { id } = req.params;

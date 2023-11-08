@@ -1,16 +1,36 @@
 <nav>
   <h2 class="logo">RBAC</h2>
+
   <ul>
     <li><a href="/">Home</a></li>
     <% if (user) { %>
-    <li><a href="/user/profile">Profile</a></li>
-    <% if (user.role === 'ADMIN') { %>
-    <li><a href="/admin/users">Manage Users</a></li>
-    <% } %>
-    <li><a href="/auth/logout">Logout</a></li>
-    <% } else { %>
-    <li><a href="/auth/register">Register</a></li>
-    <li><a href="/auth/login">Login</a></li>
-    <% } %>
+      <li><a href="/user/profile">Profile</a></li>
+      <li><a href="/admin/users">Manage Users</a></li>
+      <li><a href="/admin/user-details">User Details</a></li>
+      <li><a href="/admin/promotion">Employee Promotion</a></li>
+      <li><a href="/admin/projects">Projects</a></li>
+      <li><a href="/admin/employees">Employees</a></li>
+      <li><a href="/admin/tickets">Tickets</a></li>
+      <li><a href="/admin/clients">Clients</a></li>
+      <li><a href="/auth/logout">Logout</a></li>
+
+
+      <!-- <% if (user.role === 'ADMIN') { %>
+    <% } %> -->
+      <!-- <% if (user.role==='ADMIN' ) { %>
+        <li><a href="/admin/users">Manage Users</a></li>
+
+        <% } %>
+
+          <% if (user.role==='HR' ) { %>
+            <li><a href="https://nodejs-user-details-dori.vercel.app/user/details">User Details</a></li>
+            <li><a href="https://nodejs-user-details-dori.vercel.app/promotionemployee">Emp promotion</a></li>
+            <li><a href="https://nodejs-user-details-dori.vercel.app/allemployee">All employees</a></li>
+            <% } %> -->
+
+      <% } else { %>
+        <li><a href="/auth/register">Register</a></li>
+        <li><a href="/auth/login">Login</a></li>
+        <% } %>
   </ul>
 </nav>
