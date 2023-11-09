@@ -64,12 +64,14 @@ app.use(
   ensureAdmin,
   require('./routes/admin.route')
 );
+
 app.use(
-  '/admin',
+  '/hr',
   ensureLoggedIn({ redirectTo: '/auth/login' }),
-  ensureAdmin,
-  require('./routes/admin.route')
+  ensureHR,
+  require('./routes/hr.route')
 );
+
 
 // 404 Handler
 app.use((req, res, next) => {
@@ -80,7 +82,7 @@ app.use((req, res, next) => {
 app.use((error, req, res, next) => {
   error.status = error.status || 500;
   res.status(error.status);
-  res.render('error_40x', { error });
+  // res.render('error_40x', { error });
 });
 
 // Setting the PORT
@@ -115,6 +117,15 @@ function ensureAdmin(req, res, next) {
     next();
   } else {
     req.flash('warning', 'you are not Authorized to see this route');
+    res.redirect('/');
+  }
+}
+
+function ensureHR(req, res, next) {
+  if(req.user.role === roles.hr || req.user.role === roles.admin) {
+    next();
+  } else {
+    req.flash('warning', 'you are not authorized to see this route');
     res.redirect('/');
   }
 }

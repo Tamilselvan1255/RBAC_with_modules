@@ -13,15 +13,15 @@ router.get('/users', async (req, res, next) => {
   }
 });
 
-router.get('/user-details', async (req, res, next) => {
-  try {
-    const users = await User.find();
-    // res.send(users);
-    res.render('user-details', { users });
-  } catch (error) {
-    next(error);
-  }
-});
+// router.get('/user-details', async (req, res, next) => {
+//   try {
+//     const users = await User.find();
+//     // res.send(users);
+//     res.render('user-details', { users });
+//   } catch (error) {
+//     next(error);
+//   }
+// });
 
 router.get('/promotion', async (req, res, next) => {
   try {
@@ -44,15 +44,15 @@ router.get('/projects', async (req, res, next) => {
   }
 });
 
-router.get('/employees', async (req, res, next) => {
-  try {
-    const users = await User.find();
-    // res.send(users);
-    res.render('employees', { users });
-  } catch (error) {
-    next(error);
-  }
-});
+// router.get('/employees', async (req, res, next) => {
+//   try {
+//     const users = await User.find();
+//     // res.send(users);
+//     res.render('employees', { users });
+//   } catch (error) {
+//     next(error);
+//   }
+// });
 
 router.get('/tickets', async (req, res, next) => {
   try {
